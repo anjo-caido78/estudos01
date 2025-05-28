@@ -1,0 +1,18 @@
+const produtos = [
+  { nome: 'Steam R$50', img: 'https://i.imgur.com/SteamCard.png' },
+  { nome: 'Xbox R$100', img: 'https://i.imgur.com/XboxCard.png' },
+  { nome: 'Google Play R$30', img: 'https://i.imgur.com/GoogleCard.png' }
+];
+
+const container = document.getElementById('produtos');
+
+produtos.forEach(produto => {
+  const div = document.createElement('div');
+  div.className = 'card';
+  div.innerHTML = `
+    <img src="${produto.img}" alt="${produto.nome}">
+    <h2>${produto.nome}</h2>
+    <button onclick="alert('Compra simulada de ${produto.nome}')">Comprar</button>
+  `;
+  container.appendChild(div);
+});
